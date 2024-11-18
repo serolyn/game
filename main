@@ -35,3 +35,22 @@ while True:
 
     pygame.display.flip()
     clock.tick(30)
+
+import random
+
+
+obstacles = []
+
+if pygame.time.get_ticks() % 1000 == 0:
+    obstacle_x = WIDTH
+    obstacle_y = random.randint(0, HEIGHT - 50)
+    obstacles.append(pygame.Rect(obstacle_x, obstacle_y, 50, 50))
+
+
+for obstacle in obstacles:
+    obstacle.x -= hero_speed 
+    pygame.draw.rect(screen, (255, 0, 0), obstacle)
+
+if pygame.time.get_ticks() % 10000 == 0:
+    hero_speed += 1
+
