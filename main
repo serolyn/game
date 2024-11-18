@@ -1,0 +1,37 @@
+import pygame
+import sys
+
+pygame.init()
+
+
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Auto-runner")
+
+
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+
+
+hero_x, hero_y = 100, HEIGHT // 2
+hero_width, hero_height = 50, 50
+hero_speed = 5
+
+
+clock = pygame.time.Clock()
+
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+
+    hero_x += hero_speed
+
+    
+    screen.fill(WHITE)
+    pygame.draw.rect(screen, BLACK, (hero_x, hero_y, hero_width, hero_height))
+
+    pygame.display.flip()
+    clock.tick(30)
