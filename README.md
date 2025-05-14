@@ -1,5 +1,5 @@
 # petit jeu
-ceci est un petit jeu 
+Ceci est un petit jeu test
 
 ## Instructions pour jouer
 1. Installez Python (3.7 ou supérieur).
